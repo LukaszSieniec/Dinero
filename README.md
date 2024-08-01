@@ -1,4 +1,4 @@
-# dinero
+# Dinero
 
 Exchange - "Dinero"
 
