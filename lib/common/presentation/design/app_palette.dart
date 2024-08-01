@@ -15,6 +15,7 @@ abstract class AppPalette {
 
   // Reusable colors in the application.
   static const Color white = Color(0xFFFFFFFF);
+  static const Color green = Color(0xFF28EBA5);
   static const Color red = Color(0xFFDE1407);
   static const Color orange = Color(0xFFFE968F);
 
