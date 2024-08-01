@@ -19,14 +19,14 @@ class SecureStorage extends KeysStorage {
       final SharedPreferences sharedPrefs =
           await SharedPreferences.getInstance();
 
-      // Get value of firstRun key from shared prefs, if result of first run key is: true
-      // or first run value is null then clear all needed keys from secure storage.
+      // Get value from shared prefs, if result is: true or null
+      // then clear all needed keys from secure storage.
       final bool isFirstRun = sharedPrefs.getBool(_firstRunKey) ?? true;
 
       if (isFirstRun) {
         await _secureStorage.deleteAll();
 
-        // Save first run value as false to avoid clearing secure storage on another run.
+        // Save the value as false to avoid clearing secure storage on another run.
         await sharedPrefs.setBool(
           _firstRunKey,
           false,
