@@ -1,6 +1,6 @@
-# dinero
+# Dinero
 
-Exchange - "Dinero"
+Exchange - "Dinero".
 
 ## Getting Started
 

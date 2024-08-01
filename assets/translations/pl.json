@@ -1,0 +1,15 @@
+{
+  "splash": {
+    "applicationName": "Dinero"
+  },
+  "dashboard": {},
+  "wallet": {},
+  "transactions": {},
+  "profile": {},
+  "common": {
+    "dashboard": "Panel",
+    "wallet": "Portfel",
+    "transactions": "Transakcje",
+    "profile": "Profil"
+  }
+}
