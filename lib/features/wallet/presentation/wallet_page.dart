@@ -1,4 +1,4 @@
-import 'package:dinero/features/wallet/wallet_body.dart';
+import 'package:dinero/features/wallet/presentation/wallet_body.dart';
 import 'package:flutter/material.dart';
 
 class WalletPage extends StatelessWidget {

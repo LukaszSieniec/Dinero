@@ -1,4 +1,4 @@
-import 'package:dinero/features/transactions/transactions_body.dart';
+import 'package:dinero/features/transactions/presentation/transactions_body.dart';
 import 'package:flutter/material.dart';
 
 class TransactionsPage extends StatelessWidget {
