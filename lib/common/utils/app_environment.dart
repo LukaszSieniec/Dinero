@@ -14,17 +14,17 @@ class AppEnvironment {
   });
 
   factory AppEnvironment.dev() => const AppEnvironment._(
-        baseUrl: '',
+        baseUrl: 'https://api.coingecko.com/api/v3/',
         environment: Environment.dev,
       );
 
   factory AppEnvironment.stage() => const AppEnvironment._(
-        baseUrl: '',
+        baseUrl: 'https://api.coingecko.com/api/v3/',
         environment: Environment.stage,
       );
 
   factory AppEnvironment.prod() => const AppEnvironment._(
-        baseUrl: '',
+        baseUrl: 'https://api.coingecko.com/api/v3/',
         environment: Environment.prod,
       );
 }
