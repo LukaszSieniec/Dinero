@@ -1,5 +1,7 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
+import 'package:dinero/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,22 +24,22 @@ class GlobalMarketSummary extends StatelessWidget {
           Radius.circular(16.0.r),
         ),
       ),
-      child: const Row(
+      child: Row(
         children: [
           GlobalMarketSummaryElement(
-            label: 'Active Cryptocurrency',
+            label: LocaleKeys.dashboard_activeCryptocurrencies.tr(),
             value: '13,6 k',
           ),
           GlobalMarketSummaryElement(
-            label: 'Market Cap',
+            label: LocaleKeys.dashboard_marketCap.tr(),
             value: '2,30 T',
           ),
           GlobalMarketSummaryElement(
-            label: 'Volume',
+            label: LocaleKeys.dashboard_volume.tr(),
             value: '90,45 B',
           ),
           GlobalMarketSummaryElement(
-            label: 'Dominance',
+            label: LocaleKeys.dashboard_dominance.tr(),
             value: '55,73 %',
           ),
         ],
@@ -71,10 +73,10 @@ class GlobalMarketSummaryElement extends StatelessWidget {
           SizedBox(height: 4.0.h),
           AppLabel(
             label: value,
-            style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                  fontSize: 16.0.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(context)
+                .textTheme
+                .labelLarge!
+                .copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

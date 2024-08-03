@@ -1,6 +1,5 @@
 import 'package:dinero/common/presentation/widgets/app_label.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum Button {
   elevated,
@@ -40,20 +39,14 @@ class AppButton extends StatelessWidget {
             onPressed: onPressed,
             child: AppLabel(
               label: label,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge!
-                  .copyWith(fontSize: 16.0.sp),
+              style: Theme.of(context).textTheme.labelLarge!,
             ),
           )
         : OutlinedButton(
             onPressed: onPressed,
             child: AppLabel(
               label: label,
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge!
-                  .copyWith(fontSize: 16.0.sp),
+              style: Theme.of(context).textTheme.labelLarge!,
             ),
           );
   }
