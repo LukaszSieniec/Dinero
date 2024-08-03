@@ -68,7 +68,7 @@ class GlobalMarketSummaryElement extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .labelSmall!
-                .copyWith(color: AppPalette.textLightGray),
+                .copyWith(color: AppPalette.textMediumGray),
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(height: 4.0.h),
