@@ -42,6 +42,7 @@ dependencies:
   dio: ^5.5.0+1
   retrofit: ^4.1.0
   pretty_dio_logger: ^1.3.1
+  json_annotation: ^4.9.0
 
   # Service Locator for Dart and Flutter.
   get_it: ^7.7.0
@@ -92,6 +93,9 @@ dev_dependencies:
 
   # A generator for GoRouter library.
   go_router_builder: ^2.7.0
+
+  # Provides Dart Build System builders for handling JSON.
+  json_serializable: ^6.8.0
 
 # The following section is specific to Flutter packages.
 flutter:

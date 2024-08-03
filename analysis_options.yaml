@@ -39,3 +39,5 @@ analyzer:
     - '**/*.config.dart'
     - '**/*.freezed.dart'
     - 'lib/generated/'
+  errors:
+    invalid_annotation_target: ignore
