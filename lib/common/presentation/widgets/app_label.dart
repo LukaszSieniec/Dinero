@@ -5,9 +5,17 @@ class AppLabel extends StatelessWidget {
 
   final TextStyle style;
 
+  // How the text should be aligned horizontally.
+  final TextAlign? textAlign;
+
+  // How visual overflow should be handled.
+  final TextOverflow? overflow;
+
   const AppLabel({
     required this.label,
     required this.style,
+    this.textAlign,
+    this.overflow,
     super.key,
   });
 
@@ -16,6 +24,8 @@ class AppLabel extends StatelessWidget {
     return Text(
       label,
       style: style,
+      textAlign: textAlign,
+      overflow: overflow,
     );
   }
 }

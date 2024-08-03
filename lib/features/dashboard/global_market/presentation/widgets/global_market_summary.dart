@@ -28,19 +28,19 @@ class GlobalMarketSummary extends StatelessWidget {
         children: [
           GlobalMarketSummaryElement(
             label: LocaleKeys.dashboard_activeCryptocurrencies.tr(),
-            value: '13,6 k',
+            value: '13,6k',
           ),
           GlobalMarketSummaryElement(
             label: LocaleKeys.dashboard_marketCap.tr(),
-            value: '2,30 T',
+            value: '2,30T',
           ),
           GlobalMarketSummaryElement(
             label: LocaleKeys.dashboard_volume.tr(),
-            value: '90,45 B',
+            value: '90,45B',
           ),
           GlobalMarketSummaryElement(
             label: LocaleKeys.dashboard_dominance.tr(),
-            value: '55,73 %',
+            value: '55,73%',
           ),
         ],
       ),
@@ -69,6 +69,7 @@ class GlobalMarketSummaryElement extends StatelessWidget {
                 .textTheme
                 .labelSmall!
                 .copyWith(color: AppPalette.textLightGray),
+            overflow: TextOverflow.ellipsis,
           ),
           SizedBox(height: 4.0.h),
           AppLabel(
