@@ -6,7 +6,8 @@ part 'global_market.freezed.dart';
 class GlobalMarket with _$GlobalMarket {
   const factory GlobalMarket({
     required int activeCryptocurrencies,
-    required int markets,
-    required double marketCapChangePercentage24hUsd,
+    required double totalMarketCapUsd,
+    required double totalVolumeUsd,
+    required double btcDominance,
   }) = _GlobalMarket;
 }

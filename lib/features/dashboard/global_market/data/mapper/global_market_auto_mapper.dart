@@ -8,7 +8,31 @@ import 'global_market_auto_mapper.auto_mappr.dart';
 
 @AutoMappr(
   [
-    MapType<GlobalMarketContentResponse, GlobalMarket>(),
+    MapType<GlobalMarketContentResponse, GlobalMarket>(
+      fields: [
+        Field(
+          'totalMarketCapUsd',
+          custom: GlobalMarketAutoMapper.totalMarketCapUsd,
+        ),
+        Field(
+          'totalVolumeUsd',
+          custom: GlobalMarketAutoMapper.totalVolumeUsd,
+        ),
+        Field(
+          'btcDominance',
+          custom: GlobalMarketAutoMapper.btcDominance,
+        ),
+      ],
+    ),
   ],
 )
-class GlobalMarketAutoMapper extends $GlobalMarketAutoMapper {}
+class GlobalMarketAutoMapper extends $GlobalMarketAutoMapper {
+  static double totalMarketCapUsd(GlobalMarketContentResponse response) =>
+      response.totalMarketCap.usd;
+
+  static double totalVolumeUsd(GlobalMarketContentResponse response) =>
+      response.totalVolume.usd;
+
+  static double btcDominance(GlobalMarketContentResponse response) =>
+      response.marketCapPercentage.btc;
+}
