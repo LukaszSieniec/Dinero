@@ -71,6 +71,9 @@ dependencies:
   # A flutter plugin for adapting screen and font size.
   flutter_screenutil: ^5.9.3
 
+  # A mapper that maps between different objects with ease.
+  auto_mappr: ^2.5.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
