@@ -19,7 +19,7 @@ class RestApiGlobalMarketRepository implements GlobalMarketRepository {
     try {
       final response = await _globalMarketApi.fetchGlobalMarket();
 
-      final globalMarket = _autoMapper.convert(response);
+      final globalMarket = _autoMapper.convert(response.globalMarketContent);
 
       return Result.success(data: globalMarket);
     } on DioException catch (error) {

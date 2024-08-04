@@ -8,7 +8,8 @@ part 'global_market_response.g.dart';
 @freezed
 class GlobalMarketResponse with _$GlobalMarketResponse {
   const factory GlobalMarketResponse({
-    @JsonKey(name: 'date') required GlobalMarketContentResponse globalMarket,
+    @JsonKey(name: 'date')
+    required GlobalMarketContentResponse globalMarketContent,
   }) = _GlobalMarketResponse;
 
   factory GlobalMarketResponse.fromJson(Map<String, Object?> json) =>
