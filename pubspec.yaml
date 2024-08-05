@@ -74,6 +74,10 @@ dependencies:
   # A mapper that maps between different objects with ease.
   auto_mappr: ^2.5.0
 
+  # Provides internationalization and localization facilities, including message translation,
+  # plurals and genders, date/number formatting and parsing, and bidirectional text.
+  intl: ^0.19.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
