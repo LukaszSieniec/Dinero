@@ -33,19 +33,19 @@ class GlobalMarketSummary extends StatelessWidget {
             children: [
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_activeCryptocurrencies.tr(),
-                value: '13,6k',
+                value: '${state.globalMarket?.activeCryptocurrencies ?? '-'}',
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_marketCap.tr(),
-                value: '2,30T',
+                value: '${state.globalMarket?.totalMarketCap.usd ?? '-'}',
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_volume.tr(),
-                value: '90,45B',
+                value: '${state.globalMarket?.totalVolume.usd ?? '-'}',
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_dominance.tr(),
-                value: '55,73%',
+                value: '${state.globalMarket?.btcDominance ?? '-'}',
               ),
             ],
           ),
@@ -85,6 +85,7 @@ class GlobalMarketSummaryElement extends StatelessWidget {
                 .textTheme
                 .labelLarge!
                 .copyWith(fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
