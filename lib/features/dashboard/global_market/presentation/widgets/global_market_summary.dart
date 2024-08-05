@@ -1,5 +1,6 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
+import 'package:dinero/common/utils/number_formatters/app_number_formatter.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_bloc.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_state.dart';
 import 'package:dinero/generated/locale_keys.g.dart';
@@ -33,15 +34,16 @@ class GlobalMarketSummary extends StatelessWidget {
             children: [
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_activeCryptocurrencies.tr(),
-                value: '${state.globalMarket?.activeCryptocurrencies ?? '-'}',
+                value:
+                    compactFormat(state.globalMarket?.activeCryptocurrencies),
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_marketCap.tr(),
-                value: '${state.globalMarket?.totalMarketCap.usd ?? '-'}',
+                value: compactFormat(state.globalMarket?.totalMarketCap.usd),
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_volume.tr(),
-                value: '${state.globalMarket?.totalVolume.usd ?? '-'}',
+                value: compactFormat(state.globalMarket?.totalVolume.usd),
               ),
               GlobalMarketSummaryElement(
                 label: LocaleKeys.dashboard_dominance.tr(),
