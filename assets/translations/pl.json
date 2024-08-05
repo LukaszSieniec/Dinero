@@ -2,7 +2,12 @@
   "splash": {
     "applicationName": "Dinero"
   },
-  "dashboard": {},
+  "dashboard": {
+    "activeCryptocurrencies": "Aktywne kryptowaluty",
+    "marketCap": "Kapitalizacja rynkowa",
+    "volume": "Wolumen",
+    "dominance": "Dominacja"
+  },
   "wallet": {},
   "transactions": {},
   "profile": {},

@@ -12,7 +12,7 @@ class SplashState with _$SplashState {
 
 @freezed
 sealed class SplashStatus with _$SplashStatus {
-  // The status of the screen that allows content to be displayed.
+  // The screen status that allows content to be displayed.
   const factory SplashStatus.initial() = _SplashInitial;
 }
 

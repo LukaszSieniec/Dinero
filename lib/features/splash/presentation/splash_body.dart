@@ -1,6 +1,6 @@
 import 'package:dinero/core/navigation/go_router.dart';
-import 'package:dinero/features/splash/bloc_components/splash_bloc.dart';
-import 'package:dinero/features/splash/bloc_components/splash_state.dart';
+import 'package:dinero/features/splash/presentation/bloc_components/splash_bloc.dart';
+import 'package:dinero/features/splash/presentation/bloc_components/splash_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

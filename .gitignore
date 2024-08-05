@@ -48,6 +48,7 @@ lib/**/*.g.dart
 lib/**/*.gr.dart
 lib/**/*.gen.dart
 lib/**/*.config.dart
+lib/**/*.auto_mappr.dart
 
 # FVM
 .fvm/flutter_sdk

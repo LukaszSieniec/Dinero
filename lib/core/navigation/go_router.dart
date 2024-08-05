@@ -1,10 +1,10 @@
 import 'package:dinero/core/navigation/routes.dart';
 import 'package:dinero/features/dashboard/dashboard_page.dart';
 import 'package:dinero/features/main_container_app/main_container_app_page.dart';
-import 'package:dinero/features/profile/profile_page.dart';
-import 'package:dinero/features/splash/splash_page.dart';
-import 'package:dinero/features/transactions/transactions_page.dart';
-import 'package:dinero/features/wallet/wallet_page.dart';
+import 'package:dinero/features/profile/presentation/profile_page.dart';
+import 'package:dinero/features/splash/presentation/splash_page.dart';
+import 'package:dinero/features/transactions/presentation/transactions_page.dart';
+import 'package:dinero/features/wallet/presentation/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

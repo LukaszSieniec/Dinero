@@ -38,7 +38,7 @@ TextTheme _buildAppTextTheme() => TextTheme(
       ),
       titleLarge: TextStyle(
         color: AppPalette.textWhite,
-        fontSize: 22.0.sp,
+        fontSize: 20.0.sp,
         fontFamily: AppResources.appFamilyFont,
       ),
       titleMedium: TextStyle(
@@ -68,17 +68,17 @@ TextTheme _buildAppTextTheme() => TextTheme(
       ),
       labelLarge: TextStyle(
         color: AppPalette.textWhite,
-        fontSize: 14.0.sp,
+        fontSize: 16.0.sp,
         fontFamily: AppResources.appFamilyFont,
       ),
       labelMedium: TextStyle(
         color: AppPalette.textWhite,
-        fontSize: 12.0.sp,
+        fontSize: 14.0.sp,
         fontFamily: AppResources.appFamilyFont,
       ),
       labelSmall: TextStyle(
         color: AppPalette.textWhite,
-        fontSize: 11.0.sp,
+        fontSize: 12.0.sp,
         fontFamily: AppResources.appFamilyFont,
       ),
     );

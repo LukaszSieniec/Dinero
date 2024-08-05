@@ -14,8 +14,8 @@ class AppHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: 24.0.r,
-        top: 48.0.r,
+        left: 16.0.w,
+        top: 48.0.h,
       ),
       child: AppLabel(
         label: label,
