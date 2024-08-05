@@ -8,7 +8,7 @@ part 'global_market_response.g.dart';
 @freezed
 class GlobalMarketResponse with _$GlobalMarketResponse {
   const factory GlobalMarketResponse({
-    @JsonKey(name: 'date')
+    @JsonKey(name: 'data')
     required GlobalMarketContentResponse globalMarketContent,
   }) = _GlobalMarketResponse;
 
