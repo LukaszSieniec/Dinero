@@ -10,10 +10,13 @@ const int _trending = 1;
 const int _favourites = 2;
 const int _exchanges = 3;
 
-const int _length = 4;
-
 class DashboardTabBar extends StatefulWidget {
-  const DashboardTabBar({super.key});
+  final TabController tabController;
+
+  const DashboardTabBar({
+    required this.tabController,
+    super.key,
+  });
 
   @override
   State<DashboardTabBar> createState() => _DashboardTabBarState();
@@ -30,36 +33,34 @@ class _DashboardTabBarState extends State<DashboardTabBar> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: _length,
-      child: TabBar(
-        isScrollable: true,
-        indicatorColor: AppPalette.white,
-        indicatorWeight: 4.0,
-        indicatorSize: TabBarIndicatorSize.label,
-        tabAlignment: TabAlignment.center,
-        onTap: (index) => setState(
-          () => currentIndex = index,
-        ),
-        tabs: [
-          TabBarItem(
-            label: LocaleKeys.dashboard_cryptocurrencies.tr(),
-            isSelected: currentIndex == _cryptocurrencies,
-          ),
-          TabBarItem(
-            label: LocaleKeys.dashboard_trending.tr(),
-            isSelected: currentIndex == _trending,
-          ),
-          TabBarItem(
-            label: LocaleKeys.dashboard_favourites.tr(),
-            isSelected: currentIndex == _favourites,
-          ),
-          TabBarItem(
-            label: LocaleKeys.dashboard_exchanges.tr(),
-            isSelected: currentIndex == _exchanges,
-          ),
-        ],
+    return TabBar(
+      controller: widget.tabController,
+      isScrollable: true,
+      indicatorColor: AppPalette.white,
+      indicatorWeight: 4.0,
+      indicatorSize: TabBarIndicatorSize.label,
+      tabAlignment: TabAlignment.center,
+      onTap: (index) => setState(
+        () => currentIndex = index,
       ),
+      tabs: [
+        TabBarItem(
+          label: LocaleKeys.dashboard_cryptocurrencies.tr(),
+          isSelected: currentIndex == _cryptocurrencies,
+        ),
+        TabBarItem(
+          label: LocaleKeys.dashboard_trending.tr(),
+          isSelected: currentIndex == _trending,
+        ),
+        TabBarItem(
+          label: LocaleKeys.dashboard_favourites.tr(),
+          isSelected: currentIndex == _favourites,
+        ),
+        TabBarItem(
+          label: LocaleKeys.dashboard_exchanges.tr(),
+          isSelected: currentIndex == _exchanges,
+        ),
+      ],
     );
   }
 }
