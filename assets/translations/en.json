@@ -6,7 +6,11 @@
     "activeCryptocurrencies": "Active Cryptocurrencies",
     "marketCap": "Market Cap",
     "volume": "Volume",
-    "dominance": "Dominance"
+    "dominance": "Dominance",
+    "cryptocurrencies": "Cryptocurrencies",
+    "trending": "Trending",
+    "favourites": "Favourites",
+    "exchanges": "Exchanges"
   },
   "wallet": {},
   "transactions": {},

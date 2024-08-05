@@ -6,7 +6,11 @@
     "activeCryptocurrencies": "Aktywne kryptowaluty",
     "marketCap": "Kapitalizacja rynkowa",
     "volume": "Wolumen",
-    "dominance": "Dominacja"
+    "dominance": "Dominacja",
+    "cryptocurrencies": "Kryptowaluty",
+    "trending": "Popularne",
+    "favourites": "Ulubione",
+    "exchanges": "Giełdy"
   },
   "wallet": {},
   "transactions": {},

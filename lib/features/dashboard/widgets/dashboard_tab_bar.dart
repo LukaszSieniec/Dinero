@@ -1,7 +1,14 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
+import 'package:dinero/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+const int _cryptocurrencies = 0;
+const int _trending = 1;
+const int _favourites = 2;
+const int _exchanges = 3;
 
 const int _length = 4;
 
@@ -13,7 +20,13 @@ class DashboardTabBar extends StatefulWidget {
 }
 
 class _DashboardTabBarState extends State<DashboardTabBar> {
-  var currentIndex = 0;
+  late int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = _cryptocurrencies;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +34,30 @@ class _DashboardTabBarState extends State<DashboardTabBar> {
       length: _length,
       child: TabBar(
         isScrollable: true,
-        indicatorColor: Colors.blue,
+        indicatorColor: AppPalette.white,
         indicatorWeight: 4.0,
         indicatorSize: TabBarIndicatorSize.label,
-        onTap: (index) => setState(() => currentIndex = index),
+        tabAlignment: TabAlignment.center,
+        onTap: (index) => setState(
+          () => currentIndex = index,
+        ),
         tabs: [
-          TabBarItem(label: 'Cryptocurrencies', isSelected: currentIndex == 0),
-          TabBarItem(label: 'Trending', isSelected: currentIndex == 1),
-          TabBarItem(label: 'Favourites', isSelected: currentIndex == 2),
-          TabBarItem(label: 'Exchanges', isSelected: currentIndex == 3),
+          TabBarItem(
+            label: LocaleKeys.dashboard_cryptocurrencies.tr(),
+            isSelected: currentIndex == _cryptocurrencies,
+          ),
+          TabBarItem(
+            label: LocaleKeys.dashboard_trending.tr(),
+            isSelected: currentIndex == _trending,
+          ),
+          TabBarItem(
+            label: LocaleKeys.dashboard_favourites.tr(),
+            isSelected: currentIndex == _favourites,
+          ),
+          TabBarItem(
+            label: LocaleKeys.dashboard_exchanges.tr(),
+            isSelected: currentIndex == _exchanges,
+          ),
         ],
       ),
     );
