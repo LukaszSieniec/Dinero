@@ -3,7 +3,6 @@ import 'package:dinero/common/presentation/widgets/app_label.dart';
 import 'package:dinero/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const int _cryptocurrencies = 0;
 const int _trending = 1;
@@ -36,8 +35,8 @@ class _DashboardTabBarState extends State<DashboardTabBar> {
     return TabBar(
       controller: widget.tabController,
       isScrollable: true,
-      indicatorColor: AppPalette.white,
-      indicatorWeight: 4.0,
+      indicatorColor: AppPalette.blue,
+      indicatorWeight: 3.0,
       indicatorSize: TabBarIndicatorSize.label,
       tabAlignment: TabAlignment.center,
       onTap: (index) => setState(
@@ -80,19 +79,14 @@ class TabBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: 8.0.h,
-          horizontal: 12.0.w,
-        ),
-        decoration: BoxDecoration(
-          color: isSelected ? AppPalette.blue : AppPalette.mediumDark,
-          borderRadius: BorderRadius.circular(8.0.r),
-        ),
-        child: AppLabel(
-          label: label,
-          style: Theme.of(context).textTheme.labelMedium!,
-        ),
+      child: AppLabel(
+        label: label,
+        style: isSelected
+            ? Theme.of(context)
+                .textTheme
+                .labelLarge!
+                .copyWith(fontWeight: FontWeight.bold)
+            : Theme.of(context).textTheme.labelLarge!,
       ),
     );
   }
