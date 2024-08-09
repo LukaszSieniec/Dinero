@@ -1,4 +1,5 @@
 import 'package:dinero/common/presentation/widgets/app_label.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/cryptocurrencies_page.dart';
 import 'package:flutter/material.dart';
 
 class DashboardTabBarView extends StatelessWidget {
@@ -15,11 +16,7 @@ class DashboardTabBarView extends StatelessWidget {
       child: TabBarView(
         controller: tabController,
         children: [
-          AppLabel(
-            label: 'I',
-            style: Theme.of(context).textTheme.titleLarge!,
-            textAlign: TextAlign.center,
-          ),
+          const CryptocurrenciesPage(),
           AppLabel(
             label: 'II',
             style: Theme.of(context).textTheme.titleLarge!,
