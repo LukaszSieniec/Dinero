@@ -16,11 +16,13 @@ class CryptocurrencyList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       itemBuilder: (context, index) => CryptocurrencyListTile(
         cryptocurrency: cryptocurrencies[index],
       ),
+      separatorBuilder: (context, index) => SizedBox(height: 16.0.h),
+      itemCount: cryptocurrencies.length,
     );
   }
 }
