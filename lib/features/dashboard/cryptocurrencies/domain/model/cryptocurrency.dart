@@ -9,8 +9,8 @@ class Cryptocurrency with _$Cryptocurrency {
     required String symbol,
     required String name,
     required String image,
-    required double? currentPrice,
-    required double? marketCap,
-    required int? marketCapRank,
+    required double currentPrice,
+    required double marketCap,
+    required int marketCapRank,
   }) = _Cryptocurrency;
 }

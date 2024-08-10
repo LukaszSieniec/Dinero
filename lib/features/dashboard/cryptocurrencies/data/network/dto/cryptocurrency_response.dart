@@ -11,27 +11,32 @@ class CryptocurrencyResponse with _$CryptocurrencyResponse {
     required String symbol,
     required String name,
     required String image,
-    required double? currentPrice,
-    required double? marketCap,
-    required int? marketCapRank,
+    @JsonKey(name: 'current_price') required double currentPrice,
+    @JsonKey(name: 'market_cap') required double marketCap,
+    @JsonKey(name: 'market_cap_rank') required int marketCapRank,
+    @JsonKey(name: 'fully_diluted_valuation')
     required int? fullyDilutedValuation,
-    required int? totalVolume,
-    required int? high24h,
-    required int? low24h,
-    required double? priceChange24h,
+    @JsonKey(name: 'total_volume') required int? totalVolume,
+    @JsonKey(name: 'high_24h') required int? high24h,
+    @JsonKey(name: 'low_24h') required int? low24h,
+    @JsonKey(name: 'price_change_24h') required double? priceChange24h,
+    @JsonKey(name: 'price_change_percentage_24h')
     required double? priceChangePercentage24h,
-    required int? marketCapChange24h,
+    @JsonKey(name: 'market_cap_change_24h') required int? marketCapChange24h,
+    @JsonKey(name: 'market_cap_change_percentage_24h')
     required double? marketCapChangePercentage24h,
-    required int? circulatingSupply,
-    required int? totalSupply,
-    required int? maxSupply,
+    @JsonKey(name: 'circulating_supply') required int? circulatingSupply,
+    @JsonKey(name: 'total_supply') required int? totalSupply,
+    @JsonKey(name: 'max_supply') required int? maxSupply,
     required int? ath,
+    @JsonKey(name: 'ath_change_percentage')
     required double? athChangePercentage,
-    required String? athDate,
+    @JsonKey(name: 'ath_date') required String? athDate,
     required double? atl,
+    @JsonKey(name: 'atl_change_percentage')
     required double? atlChangePercentage,
-    required String? atlDate,
-    required String? lastUpdated,
+    @JsonKey(name: 'atl_date') required String? atlDate,
+    @JsonKey(name: 'last_updated') required String? lastUpdated,
   }) = _CryptocurrencyResponse;
 
   factory CryptocurrencyResponse.fromJson(Map<String, Object?> json) =>
