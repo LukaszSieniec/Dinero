@@ -1,7 +1,7 @@
 import 'package:dinero/common/utils/result.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/data/mapper/cryptocurrencies_auto_mapper.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/data/network/cryptocurrencies_api.dart';
-import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrencies_item_response.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrency_response.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/repository/cryptocurrencies_repository.dart';
 import 'package:dio/dio.dart';
@@ -44,9 +44,9 @@ class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
 
       final List<Cryptocurrency> cryptocurrencies = [];
 
-      for (final item in response.cryptocurrencies) {
-        final cryptocurrency = _autoMapper
-            .convert<CryptocurrenciesItemResponse, Cryptocurrency>(item);
+      for (final item in response) {
+        final cryptocurrency =
+            _autoMapper.convert<CryptocurrencyResponse, Cryptocurrency>(item);
 
         cryptocurrencies.add(cryptocurrency);
       }

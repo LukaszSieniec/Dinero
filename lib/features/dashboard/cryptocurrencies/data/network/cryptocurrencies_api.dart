@@ -1,4 +1,4 @@
-import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrencies_response.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrency_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -11,7 +11,7 @@ abstract class CryptocurrenciesApi {
   factory CryptocurrenciesApi(Dio dio) = _CryptocurrenciesApi;
 
   @GET(cryptocurrenciesPath)
-  Future<CryptocurrenciesResponse> fetchCryptocurrencies({
+  Future<List<CryptocurrencyResponse>> fetchCryptocurrencies({
     @Query('vs_currency') required String vsCurrency,
     @Query('ids') List<String>? ids,
     @Query('category') String? category,
