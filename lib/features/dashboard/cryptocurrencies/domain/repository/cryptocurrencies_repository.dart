@@ -1,10 +1,10 @@
 import 'package:dinero/common/utils/result.dart';
-import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrencies_response.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
 import 'package:dio/dio.dart';
 
 abstract class CryptocurrenciesRepository {
   /// The method allows you to fetch all cryptocurrencies.
-  Future<Result<CryptocurrenciesResponse, DioException>> fetchCryptocurrencies({
+  Future<Result<List<Cryptocurrency>, DioException>> fetchCryptocurrencies({
     required String vsCurrency,
     required List<String> ids,
     String? category,

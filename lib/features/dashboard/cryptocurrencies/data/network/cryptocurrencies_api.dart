@@ -14,13 +14,13 @@ abstract class CryptocurrenciesApi {
   Future<CryptocurrenciesResponse> fetchCryptocurrencies({
     @Query('vs_currency') required String vsCurrency,
     @Query('ids') required List<String> ids,
-    @Query('category') String category,
-    @Query('order') String order,
-    @Query('per_page') int perPage,
-    @Query('page') int page,
-    @Query('sparkline') bool sparkline,
-    @Query('price_change_percentage') String priceChangePercentage,
-    @Query('locale') String locale,
-    @Query('precision') String precision,
+    @Query('category') String? category,
+    @Query('order') String? order,
+    @Query('per_page') int? perPage,
+    @Query('page') int? page,
+    @Query('sparkline') bool? sparkline,
+    @Query('price_change_percentage') String? priceChangePercentage,
+    @Query('locale') String? locale,
+    @Query('precision') String? precision,
   });
 }
