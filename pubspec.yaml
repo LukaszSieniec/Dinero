@@ -78,6 +78,9 @@ dependencies:
   # plurals and genders, date/number formatting and parsing, and bidirectional text.
   intl: ^0.19.0
 
+  # FL Chart is a highly customizable Flutter chart library.
+  fl_chart: ^0.68.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
