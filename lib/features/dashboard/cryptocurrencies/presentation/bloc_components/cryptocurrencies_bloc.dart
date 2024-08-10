@@ -19,7 +19,7 @@ class CryptocurrenciesBloc
     Emitter<CryptocurrenciesState> emit,
   ) async {
     final result = await _cryptocurrenciesRepository.fetchCryptocurrencies(
-      vsCurrency: '',
+      vsCurrency: 'usd',
     );
 
     emit(
