@@ -42,14 +42,12 @@ class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
         precision: precision,
       );
 
-      final List<Cryptocurrency> cryptocurrencies = [];
-
-      for (final item in response) {
-        final cryptocurrency =
-            _autoMapper.convert<CryptocurrencyResponse, Cryptocurrency>(item);
-
-        cryptocurrencies.add(cryptocurrency);
-      }
+      final List<Cryptocurrency> cryptocurrencies = List.from(
+        response.map(
+          (cryptocurrency) => _autoMapper
+              .convert<CryptocurrencyResponse, Cryptocurrency>(cryptocurrency),
+        ),
+      );
 
       return Result.success(data: cryptocurrencies);
     } on DioException catch (error) {
