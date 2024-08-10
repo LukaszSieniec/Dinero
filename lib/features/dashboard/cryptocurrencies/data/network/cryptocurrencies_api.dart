@@ -13,7 +13,7 @@ abstract class CryptocurrenciesApi {
   @GET(cryptocurrenciesPath)
   Future<CryptocurrenciesResponse> fetchCryptocurrencies({
     @Query('vs_currency') required String vsCurrency,
-    @Query('ids') required List<String> ids,
+    @Query('ids') List<String>? ids,
     @Query('category') String? category,
     @Query('order') String? order,
     @Query('per_page') int? perPage,

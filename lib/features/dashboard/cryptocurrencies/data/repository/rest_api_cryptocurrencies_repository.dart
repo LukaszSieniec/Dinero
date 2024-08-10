@@ -18,7 +18,7 @@ class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
   @override
   Future<Result<List<Cryptocurrency>, DioException>> fetchCryptocurrencies({
     required String vsCurrency,
-    required List<String> ids,
+    List<String>? ids,
     String? category,
     String? order,
     int? perPage,

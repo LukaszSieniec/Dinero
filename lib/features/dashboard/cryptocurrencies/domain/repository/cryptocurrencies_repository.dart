@@ -6,7 +6,7 @@ abstract class CryptocurrenciesRepository {
   /// The method allows you to fetch all cryptocurrencies.
   Future<Result<List<Cryptocurrency>, DioException>> fetchCryptocurrencies({
     required String vsCurrency,
-    required List<String> ids,
+    List<String>? ids,
     String? category,
     String? order,
     int? perPage,
