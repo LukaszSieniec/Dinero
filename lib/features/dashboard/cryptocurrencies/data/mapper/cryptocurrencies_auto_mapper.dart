@@ -8,7 +8,17 @@ import 'cryptocurrencies_auto_mapper.auto_mappr.dart';
 
 @AutoMappr(
   [
-    MapType<CryptocurrencyResponse, Cryptocurrency>(),
+    MapType<CryptocurrencyResponse, Cryptocurrency>(
+      fields: [
+        Field(
+          'sparklineIn7d',
+          custom: CryptocurrenciesAutoMapper.sparklineIn7d,
+        ),
+      ],
+    ),
   ],
 )
-class CryptocurrenciesAutoMapper extends $CryptocurrenciesAutoMapper {}
+class CryptocurrenciesAutoMapper extends $CryptocurrenciesAutoMapper {
+  static List<double> sparklineIn7d(CryptocurrencyResponse response) =>
+      response.sparklineIn7d.price;
+}

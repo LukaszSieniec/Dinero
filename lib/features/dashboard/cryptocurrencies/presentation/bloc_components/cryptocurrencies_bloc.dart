@@ -20,6 +20,7 @@ class CryptocurrenciesBloc
   ) async {
     final result = await _cryptocurrenciesRepository.fetchCryptocurrencies(
       vsCurrency: 'usd',
+      sparkline: true,
     );
 
     emit(

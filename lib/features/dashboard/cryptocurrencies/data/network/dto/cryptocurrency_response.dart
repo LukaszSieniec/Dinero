@@ -1,3 +1,4 @@
+import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/sparkline_response.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'cryptocurrency_response.freezed.dart';
@@ -37,6 +38,7 @@ class CryptocurrencyResponse with _$CryptocurrencyResponse {
     required double? atlChangePercentage,
     @JsonKey(name: 'atl_date') required String? atlDate,
     @JsonKey(name: 'last_updated') required String? lastUpdated,
+    @JsonKey(name: 'sparkline_in_7d') required SparklineResponse sparklineIn7d,
   }) = _CryptocurrencyResponse;
 
   factory CryptocurrencyResponse.fromJson(Map<String, Object?> json) =>
