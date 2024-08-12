@@ -81,6 +81,10 @@ dependencies:
   # FL Chart is a highly customizable Flutter chart library.
   fl_chart: ^0.68.0
 
+  # The Flutter Charts package is a data visualization library written natively in Dart
+  # for creating beautiful, animated and high-performance charts.
+  syncfusion_flutter_charts: ^26.2.8
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
