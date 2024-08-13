@@ -70,14 +70,17 @@ class CryptocurrencyListTile extends StatelessWidget {
           ],
         ),
         SizedBox(width: 32.0.w),
-        AppLabel(
-          label: '${cryptocurrency.currentPrice}',
-          style: Theme.of(context)
-              .textTheme
-              .labelLarge!
-              .copyWith(fontWeight: FontWeight.bold),
+        Expanded(
+          child: AppLabel(
+            label: '\$${cryptocurrency.currentPrice}',
+            style: Theme.of(context)
+                .textTheme
+                .labelLarge!
+                .copyWith(fontWeight: FontWeight.bold),
+            textAlign: TextAlign.end,
+          ),
         ),
-        SizedBox(width: 64.0.w),
+        SizedBox(width: 32.0.w),
         Expanded(
           child: SizedBox(
             height: 40.0.h,
