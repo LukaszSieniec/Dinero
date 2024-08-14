@@ -10,7 +10,7 @@ class DashboardSliverPersistentHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPersistentHeader(
-      delegate: _SliverAppBarDelegate(
+      delegate: _DashboardSliverPersistentHeaderDelegate(
         minHeight: 60.0.h,
         maxHeight: 200.0.h,
         child: Container(
@@ -27,13 +27,14 @@ class DashboardSliverPersistentHeader extends StatelessWidget {
   }
 }
 
-class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+class _DashboardSliverPersistentHeaderDelegate
+    extends SliverPersistentHeaderDelegate {
   final double minHeight;
   final double maxHeight;
 
   final Widget child;
 
-  _SliverAppBarDelegate({
+  const _DashboardSliverPersistentHeaderDelegate({
     required this.minHeight,
     required this.maxHeight,
     required this.child,
@@ -58,7 +59,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  bool shouldRebuild(covariant _SliverAppBarDelegate oldDelegate) =>
+  bool shouldRebuild(_DashboardSliverPersistentHeaderDelegate oldDelegate) =>
       maxHeight != oldDelegate.maxHeight ||
       minHeight != oldDelegate.minHeight ||
       child != oldDelegate.child;
