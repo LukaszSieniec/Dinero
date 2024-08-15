@@ -12,6 +12,7 @@ class Cryptocurrency with _$Cryptocurrency {
     required double currentPrice,
     required double marketCap,
     required int marketCapRank,
+    required double priceChangePercentage24h,
     required List<double> sparklineIn7d,
   }) = _Cryptocurrency;
 }
