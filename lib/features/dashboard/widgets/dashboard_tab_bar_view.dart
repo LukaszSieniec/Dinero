@@ -12,28 +12,26 @@ class DashboardTabBarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TabBarView(
-        controller: tabController,
-        children: [
-          const CryptocurrenciesPage(),
-          AppLabel(
-            label: 'II',
-            style: Theme.of(context).textTheme.titleLarge!,
-            textAlign: TextAlign.center,
-          ),
-          AppLabel(
-            label: 'III',
-            style: Theme.of(context).textTheme.titleLarge!,
-            textAlign: TextAlign.center,
-          ),
-          AppLabel(
-            label: 'IV',
-            style: Theme.of(context).textTheme.titleLarge!,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+    return TabBarView(
+      controller: tabController,
+      children: [
+        const CryptocurrenciesPage(),
+        AppLabel(
+          label: 'II',
+          style: Theme.of(context).textTheme.titleLarge!,
+          textAlign: TextAlign.center,
+        ),
+        AppLabel(
+          label: 'III',
+          style: Theme.of(context).textTheme.titleLarge!,
+          textAlign: TextAlign.center,
+        ),
+        AppLabel(
+          label: 'IV',
+          style: Theme.of(context).textTheme.titleLarge!,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }
