@@ -10,7 +10,10 @@
     "cryptocurrencies": "Kryptowaluty",
     "trending": "Popularne",
     "favourites": "Ulubione",
-    "exchanges": "Giełdy"
+    "exchanges": "Giełdy",
+    "capitalization": "Kapitalizacja",
+    "currentPrice": "Aktualna cena",
+    "priceChange": "Zmiana ceny"
   },
   "wallet": {},
   "transactions": {},

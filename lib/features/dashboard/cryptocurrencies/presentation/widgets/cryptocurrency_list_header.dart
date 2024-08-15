@@ -1,5 +1,7 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
+import 'package:dinero/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,13 +20,13 @@ class CryptocurrencyListHeader extends StatelessWidget {
           SizedBox(width: 16.0.w),
           Expanded(
             child: CryptocurrencyHeaderItem(
-              label: 'Kapitalizacja',
+              label: LocaleKeys.dashboard_capitalization.tr(),
               onTap: () {},
             ),
           ),
           Expanded(
             child: CryptocurrencyHeaderItem(
-              label: 'Cena',
+              label: LocaleKeys.dashboard_currentPrice.tr(),
               onTap: () {},
               textAlign: TextAlign.end,
             ),
@@ -32,7 +34,7 @@ class CryptocurrencyListHeader extends StatelessWidget {
           SizedBox(width: 32.0.w),
           Expanded(
             child: CryptocurrencyHeaderItem(
-              label: '24h %',
+              label: LocaleKeys.dashboard_priceChange.tr(),
               onTap: () {},
               textAlign: TextAlign.end,
             ),

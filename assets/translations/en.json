@@ -10,7 +10,10 @@
     "cryptocurrencies": "Cryptocurrencies",
     "trending": "Trending",
     "favourites": "Favourites",
-    "exchanges": "Exchanges"
+    "exchanges": "Exchanges",
+    "capitalization": "Capitalization",
+    "currentPrice": "Current price",
+    "priceChange": "Price change"
   },
   "wallet": {},
   "transactions": {},
