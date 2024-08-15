@@ -65,10 +65,10 @@ class CryptocurrencyListTile extends StatelessWidget {
                   ),
                   AppLabel(
                     label: compactCurrencyFormat(cryptocurrency.marketCap),
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelMedium!
-                        .copyWith(color: AppPalette.textMediumGray),
+                    style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: AppPalette.textMediumGray,
+                          fontWeight: FontWeight.bold,
+                        ),
                   ),
                 ],
               ),
