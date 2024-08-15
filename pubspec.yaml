@@ -85,6 +85,10 @@ dependencies:
   # for creating beautiful, animated and high-performance charts.
   syncfusion_flutter_charts: ^26.2.8
 
+  # Package to help you lazily load and display small chunks of items
+  # as the user scrolls down the screen – known as infinite scrolling pagination.
+  infinite_scroll_pagination: ^4.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
