@@ -22,7 +22,7 @@ class CryptocurrencyResponse with _$CryptocurrencyResponse {
     @JsonKey(name: 'low_24h') required int? low24h,
     @JsonKey(name: 'price_change_24h') required double? priceChange24h,
     @JsonKey(name: 'price_change_percentage_24h')
-    required double? priceChangePercentage24h,
+    required double priceChangePercentage24h,
     @JsonKey(name: 'market_cap_change_24h') required int? marketCapChange24h,
     @JsonKey(name: 'market_cap_change_percentage_24h')
     required double? marketCapChangePercentage24h,
