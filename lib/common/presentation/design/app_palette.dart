@@ -26,4 +26,8 @@ abstract class AppPalette {
   static const Color purple = Color(0xFF8605EB);
   static const Color mediumPurple = Color(0xFFB63BF0);
   static const Color lightPurple = Color(0xFFCD7AF4);
+
+  static const Color gray = Color(0xFF646875);
+// Medium Gray.
+// Light Gray.
 }

@@ -1,3 +1,4 @@
+import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_header.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/widgets/cryptocurrency_list_header.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/widgets/global_market_summary.dart';
@@ -64,6 +65,7 @@ class _DashboardBodyState extends State<DashboardBody>
                   const CryptocurrencyListHeader(),
                 ],
               ),
+              shadowColor: AppPalette.gray,
               pinned: true,
               toolbarHeight: kToolbarHeight + 40.0.h,
             ),
