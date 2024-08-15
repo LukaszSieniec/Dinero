@@ -15,7 +15,7 @@ class AppHeader extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
         left: 16.0.w,
-        top: 48.0.h,
+        top: 16.0.h,
       ),
       child: AppLabel(
         label: label,

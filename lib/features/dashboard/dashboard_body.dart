@@ -38,37 +38,39 @@ class _DashboardBodyState extends State<DashboardBody>
 
   @override
   Widget build(BuildContext context) {
-    return NestedScrollView(
-      headerSliverBuilder: (context, innerBoxIsScrolled) {
-        return [
-          SliverToBoxAdapter(
-            child: AppHeader(
-              label: LocaleKeys.common_dashboard.tr(),
+    return SafeArea(
+      child: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [
+            SliverToBoxAdapter(
+              child: AppHeader(
+                label: LocaleKeys.common_dashboard.tr(),
+              ),
             ),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16.0.h),
-          ),
-          const SliverToBoxAdapter(
-            child: GlobalMarketSummary(),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16.0.h),
-          ),
-          SliverAppBar(
-            flexibleSpace: Column(
-              children: [
-                DashboardTabBar(tabController: tabController),
-                SizedBox(height: 16.0.h),
-                const CryptocurrencyListHeader(),
-              ],
+            SliverToBoxAdapter(
+              child: SizedBox(height: 16.0.h),
             ),
-            pinned: true,
-            toolbarHeight: kToolbarHeight + 24.0.h,
-          ),
-        ];
-      },
-      body: DashboardTabBarView(tabController: tabController),
+            const SliverToBoxAdapter(
+              child: GlobalMarketSummary(),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(height: 16.0.h),
+            ),
+            SliverAppBar(
+              flexibleSpace: Column(
+                children: [
+                  DashboardTabBar(tabController: tabController),
+                  SizedBox(height: 16.0.h),
+                  const CryptocurrencyListHeader(),
+                ],
+              ),
+              pinned: true,
+              toolbarHeight: kToolbarHeight + 40.0.h,
+            ),
+          ];
+        },
+        body: DashboardTabBarView(tabController: tabController),
+      ),
     );
   }
 }
