@@ -1,4 +1,5 @@
 import 'package:dinero/common/presentation/widgets/app_header.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/widgets/cryptocurrency_list_header.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/widgets/global_market_summary.dart';
 import 'package:dinero/features/dashboard/widgets/dashboard_tab_bar.dart';
 import 'package:dinero/features/dashboard/widgets/dashboard_tab_bar_view.dart';
@@ -55,7 +56,12 @@ class _DashboardBodyState extends State<DashboardBody>
             child: SizedBox(height: 16.0.h),
           ),
           SliverAppBar(
-            flexibleSpace: DashboardTabBar(tabController: tabController),
+            flexibleSpace: Column(
+              children: [
+                DashboardTabBar(tabController: tabController),
+                const CryptocurrencyListHeader(),
+              ],
+            ),
             pinned: true,
           ),
         ];
