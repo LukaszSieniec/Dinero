@@ -59,10 +59,12 @@ class _DashboardBodyState extends State<DashboardBody>
             flexibleSpace: Column(
               children: [
                 DashboardTabBar(tabController: tabController),
+                SizedBox(height: 16.0.h),
                 const CryptocurrencyListHeader(),
               ],
             ),
             pinned: true,
+            toolbarHeight: kToolbarHeight + 24.0.h,
           ),
         ];
       },
