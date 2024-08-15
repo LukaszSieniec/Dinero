@@ -13,7 +13,7 @@
     "exchanges": "Giełdy",
     "capitalization": "Kapitalizacja",
     "currentPrice": "Aktualna cena",
-    "priceChange": "Zmiana ceny"
+    "last7Days": "Ostatnie 7 dni"
   },
   "wallet": {},
   "transactions": {},

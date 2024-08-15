@@ -13,7 +13,7 @@
     "exchanges": "Exchanges",
     "capitalization": "Capitalization",
     "currentPrice": "Current price",
-    "priceChange": "Price change"
+    "last7Days": "Last 7 days"
   },
   "wallet": {},
   "transactions": {},

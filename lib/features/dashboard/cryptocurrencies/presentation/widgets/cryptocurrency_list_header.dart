@@ -34,7 +34,7 @@ class CryptocurrencyListHeader extends StatelessWidget {
           SizedBox(width: 32.0.w),
           Expanded(
             child: CryptocurrencyHeaderItem(
-              label: LocaleKeys.dashboard_priceChange.tr(),
+              label: LocaleKeys.dashboard_last7Days.tr(),
               textAlign: TextAlign.end,
               onTap: () {},
             ),
