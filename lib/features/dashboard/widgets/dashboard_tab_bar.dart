@@ -3,14 +3,13 @@ import 'package:dinero/common/presentation/widgets/app_label.dart';
 import 'package:dinero/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const int _cryptocurrencies = 0;
 const int _trending = 1;
 const int _favourites = 2;
 const int _exchanges = 3;
 
-class DashboardTabBar extends StatefulWidget implements PreferredSizeWidget {
+class DashboardTabBar extends StatefulWidget {
   final TabController tabController;
 
   const DashboardTabBar({
@@ -20,9 +19,6 @@ class DashboardTabBar extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   State<DashboardTabBar> createState() => _DashboardTabBarState();
-
-  @override
-  Size get preferredSize => Size.fromHeight(46.0.h);
 }
 
 class _DashboardTabBarState extends State<DashboardTabBar> {

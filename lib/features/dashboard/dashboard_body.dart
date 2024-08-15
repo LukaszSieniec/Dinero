@@ -37,19 +37,30 @@ class _DashboardBodyState extends State<DashboardBody>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        AppHeader(
-          label: LocaleKeys.common_dashboard.tr(),
-        ),
-        SizedBox(height: 16.0.h),
-        const GlobalMarketSummary(),
-        SizedBox(height: 16.0.h),
-        DashboardTabBar(tabController: tabController),
-        SizedBox(height: 16.0.h),
-        DashboardTabBarView(tabController: tabController),
-      ],
+    return NestedScrollView(
+      headerSliverBuilder: (context, innerBoxIsScrolled) {
+        return [
+          SliverToBoxAdapter(
+            child: AppHeader(
+              label: LocaleKeys.common_dashboard.tr(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 16.0.h),
+          ),
+          const SliverToBoxAdapter(
+            child: GlobalMarketSummary(),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 16.0.h),
+          ),
+          SliverAppBar(
+            flexibleSpace: DashboardTabBar(tabController: tabController),
+            pinned: true,
+          ),
+        ];
+      },
+      body: DashboardTabBarView(tabController: tabController),
     );
   }
 }
