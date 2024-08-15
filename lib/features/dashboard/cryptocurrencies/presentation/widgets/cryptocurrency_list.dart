@@ -48,28 +48,33 @@ class CryptocurrencyListTile extends StatelessWidget {
               .copyWith(fontWeight: FontWeight.bold),
         ),
         SizedBox(width: 16.0.w),
-        AppRoundedNetworkImage(imageUrl: cryptocurrency.image),
-        SizedBox(width: 8.0.w),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AppLabel(
-              label: cryptocurrency.symbol.toUpperCase(),
-              style: Theme.of(context)
-                  .textTheme
-                  .labelLarge!
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-            AppLabel(
-              label: compactCurrencyFormat(cryptocurrency.marketCap),
-              style: Theme.of(context)
-                  .textTheme
-                  .labelMedium!
-                  .copyWith(color: AppPalette.textMediumGray),
-            ),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              AppRoundedNetworkImage(imageUrl: cryptocurrency.image),
+              SizedBox(width: 8.0.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppLabel(
+                    label: cryptocurrency.symbol.toUpperCase(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelLarge!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  AppLabel(
+                    label: compactCurrencyFormat(cryptocurrency.marketCap),
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelMedium!
+                        .copyWith(color: AppPalette.textMediumGray),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-        SizedBox(width: 32.0.w),
         Expanded(
           child: AppLabel(
             label: '\$${cryptocurrency.currentPrice}',
