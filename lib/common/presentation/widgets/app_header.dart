@@ -19,7 +19,10 @@ class AppHeader extends StatelessWidget {
       ),
       child: AppLabel(
         label: label,
-        style: Theme.of(context).textTheme.headlineLarge!,
+        style: Theme.of(context)
+            .textTheme
+            .headlineLarge!
+            .copyWith(fontWeight: FontWeight.w600),
       ),
     );
   }
