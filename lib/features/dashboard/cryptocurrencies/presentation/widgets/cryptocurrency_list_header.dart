@@ -27,16 +27,16 @@ class CryptocurrencyListHeader extends StatelessWidget {
           Expanded(
             child: CryptocurrencyHeaderItem(
               label: LocaleKeys.dashboard_currentPrice.tr(),
-              onTap: () {},
               textAlign: TextAlign.end,
+              onTap: () {},
             ),
           ),
           SizedBox(width: 32.0.w),
           Expanded(
             child: CryptocurrencyHeaderItem(
               label: LocaleKeys.dashboard_priceChange.tr(),
-              onTap: () {},
               textAlign: TextAlign.end,
+              onTap: () {},
             ),
           ),
         ],
@@ -48,16 +48,19 @@ class CryptocurrencyListHeader extends StatelessWidget {
 class CryptocurrencyHeaderItem extends StatelessWidget {
   final String label;
 
-  // Allows you to sort cryptocurrencies according to the selected parameter.
-  final VoidCallback? onTap;
-
   // The cryptocurrency parameter label position.
   final TextAlign? textAlign;
 
+  // Allows you to sort cryptocurrencies according to the selected parameter.
+  final VoidCallback? onTap;
+
+  final bool isSelected;
+
   const CryptocurrencyHeaderItem({
     required this.label,
-    this.onTap,
     this.textAlign,
+    this.onTap,
+    this.isSelected = false,
     super.key,
   });
 
