@@ -76,13 +76,27 @@ class CryptocurrencyListTile extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: AppLabel(
-            label: '\$${cryptocurrency.currentPrice}',
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge!
-                .copyWith(fontWeight: FontWeight.bold),
-            textAlign: TextAlign.end,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              AppLabel(
+                label: '\$${cryptocurrency.currentPrice}',
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+              AppLabel(
+                label:
+                    percentageFormat(cryptocurrency.priceChangePercentage24h),
+                style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                      color: cryptocurrency.priceChangePercentage24h > 0.0
+                          ? AppPalette.green
+                          : AppPalette.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+            ],
           ),
         ),
         SizedBox(width: 32.0.w),
