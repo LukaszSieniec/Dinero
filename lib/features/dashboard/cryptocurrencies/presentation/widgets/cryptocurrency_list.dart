@@ -105,7 +105,10 @@ class CryptocurrencyListTile extends StatelessWidget {
             height: 40.0.h,
             child: SfSparkLineChart(
               data: cryptocurrency.sparklineIn7d,
-              color: AppPalette.green,
+              color: cryptocurrency.sparklineIn7d.last >
+                      cryptocurrency.sparklineIn7d.first
+                  ? AppPalette.green
+                  : AppPalette.red,
               axisLineWidth: 0.0,
             ),
           ),
