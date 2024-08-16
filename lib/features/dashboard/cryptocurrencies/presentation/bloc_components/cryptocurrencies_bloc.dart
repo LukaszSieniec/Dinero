@@ -7,6 +7,8 @@ import 'package:injectable/injectable.dart';
 @injectable
 class CryptocurrenciesBloc
     extends Bloc<CryptocurrenciesEvent, CryptocurrenciesState> {
+  static const int _cryptocurrenciesPerPage = 100;
+
   final CryptocurrenciesRepository _cryptocurrenciesRepository;
 
   CryptocurrenciesBloc(this._cryptocurrenciesRepository)
@@ -20,6 +22,8 @@ class CryptocurrenciesBloc
   ) async {
     final result = await _cryptocurrenciesRepository.fetchCryptocurrencies(
       vsCurrency: 'usd',
+      perPage: _cryptocurrenciesPerPage,
+      page: state.pageIndex,
       sparkline: true,
     );
 
@@ -27,6 +31,7 @@ class CryptocurrenciesBloc
       result.when(
         success: (cryptocurrencies) => state.copyWith(
           cryptocurrencies: cryptocurrencies ?? [],
+          pageIndex: state.pageIndex + 1,
           status: const CryptocurrenciesStatus.success(),
         ),
         failure: (error) =>
