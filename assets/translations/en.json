@@ -12,7 +12,7 @@
     "favourites": "Favourites",
     "exchanges": "Exchanges",
     "capitalization": "Capitalization",
-    "currentPrice": "Current price",
+    "price": "Price / 24h %",
     "last7Days": "Last 7 days"
   },
   "wallet": {},

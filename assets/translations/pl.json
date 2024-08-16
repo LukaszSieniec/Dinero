@@ -12,7 +12,7 @@
     "favourites": "Ulubione",
     "exchanges": "Giełdy",
     "capitalization": "Kapitalizacja",
-    "currentPrice": "Aktualna cena",
+    "price": "Cena / 24h %",
     "last7Days": "Ostatnie 7 dni"
   },
   "wallet": {},
