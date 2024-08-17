@@ -38,6 +38,12 @@ dependencies:
   # State management & Architecture.
   flutter_bloc: ^8.1.6
 
+  # A Dart package that exposes custom event transformers.
+  bloc_concurrency: ^0.2.0
+
+  # Extension methods on Stream adding common transform operators.
+  stream_transform: ^2.1.0
+
   # Components for Network Layer.
   dio: ^5.5.0+1
   retrofit: ^4.1.0
@@ -84,10 +90,6 @@ dependencies:
   # The Flutter Charts package is a data visualization library written natively in Dart
   # for creating beautiful, animated and high-performance charts.
   syncfusion_flutter_charts: ^26.2.8
-
-  # Package to help you lazily load and display small chunks of items
-  # as the user scrolls down the screen – known as infinite scrolling pagination.
-  infinite_scroll_pagination: ^4.0.0
 
 dev_dependencies:
   flutter_test:
