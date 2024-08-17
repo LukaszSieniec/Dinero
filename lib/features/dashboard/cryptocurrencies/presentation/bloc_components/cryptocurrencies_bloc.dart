@@ -1,3 +1,4 @@
+import 'package:dinero/common/utils/bloc/app_event_transformers.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/repository/cryptocurrencies_repository.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_state.dart';
@@ -7,13 +8,17 @@ import 'package:injectable/injectable.dart';
 @injectable
 class CryptocurrenciesBloc
     extends Bloc<CryptocurrenciesEvent, CryptocurrenciesState> {
+  static const Duration _throttleDuration = Duration(milliseconds: 100);
   static const int _cryptocurrenciesPerPage = 100;
 
   final CryptocurrenciesRepository _cryptocurrenciesRepository;
 
   CryptocurrenciesBloc(this._cryptocurrenciesRepository)
       : super(const CryptocurrenciesState()) {
-    on<FetchedCryptocurrenciesEvent>(_onFetched);
+    on<FetchedCryptocurrenciesEvent>(
+      _onFetched,
+      transformer: throttleDroppable(_throttleDuration),
+    );
   }
 
   Future<void> _onFetched(
