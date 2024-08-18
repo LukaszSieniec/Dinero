@@ -20,12 +20,12 @@ class DashboardBody extends StatefulWidget {
 
 class _DashboardBodyState extends State<DashboardBody>
     with TickerProviderStateMixin {
-  late final TabController tabController;
+  late final TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(
+    _tabController = TabController(
       length: _length,
       vsync: this,
     );
@@ -33,7 +33,7 @@ class _DashboardBodyState extends State<DashboardBody>
 
   @override
   void dispose() {
-    tabController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
@@ -60,7 +60,7 @@ class _DashboardBodyState extends State<DashboardBody>
             SliverAppBar(
               flexibleSpace: Column(
                 children: [
-                  DashboardTabBar(tabController: tabController),
+                  DashboardTabBar(tabController: _tabController),
                   SizedBox(height: 16.0.h),
                   const CryptocurrencyListHeader(),
                 ],
@@ -71,7 +71,7 @@ class _DashboardBodyState extends State<DashboardBody>
             ),
           ];
         },
-        body: DashboardTabBarView(tabController: tabController),
+        body: DashboardTabBarView(tabController: _tabController),
       ),
     );
   }
