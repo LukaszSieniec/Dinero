@@ -2,15 +2,12 @@ import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
 import 'package:dinero/common/presentation/widgets/app_rounded_network_image.dart';
 import 'package:dinero/common/utils/number_formatters/app_number_formatters.dart';
-import 'package:dinero/core/di/dependency_injection.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
-import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_bloc.dart';
-import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
-class CryptocurrencyList extends StatefulWidget {
+class CryptocurrencyList extends StatelessWidget {
   final List<Cryptocurrency> cryptocurrencies;
 
   const CryptocurrencyList({
@@ -19,46 +16,15 @@ class CryptocurrencyList extends StatefulWidget {
   });
 
   @override
-  State<CryptocurrencyList> createState() => _CryptocurrencyListState();
-}
-
-class _CryptocurrencyListState extends State<CryptocurrencyList> {
-  late final ScrollController _scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController()..addListener(_onScrollListener);
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      controller: _scrollController,
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       itemBuilder: (context, index) => CryptocurrencyListTile(
-        cryptocurrency: widget.cryptocurrencies[index],
+        cryptocurrency: cryptocurrencies[index],
       ),
       separatorBuilder: (context, index) => SizedBox(height: 24.0.h),
-      itemCount: widget.cryptocurrencies.length,
+      itemCount: cryptocurrencies.length,
     );
-  }
-
-  void _onScrollListener() {
-    if (!_scrollController.hasClients) return;
-
-    final maxScrollExtent = _scrollController.position.maxScrollExtent;
-    final currentScrollOffset = _scrollController.offset;
-
-    if (currentScrollOffset >= (maxScrollExtent * 0.90)) {
-      inject<CryptocurrenciesBloc>().add(const CryptocurrenciesEvent.fetched());
-    }
   }
 }
 
