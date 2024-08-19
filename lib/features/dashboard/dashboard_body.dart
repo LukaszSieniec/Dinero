@@ -71,7 +71,7 @@ class _DashboardBodyState extends State<DashboardBody>
   Widget build(BuildContext context) {
     return SafeArea(
       child: NestedScrollView(
-        key: _nestedScrollViewGlobalKey,
+        key: _globalKey,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverToBoxAdapter(
