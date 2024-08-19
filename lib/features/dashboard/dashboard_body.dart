@@ -1,5 +1,8 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_header.dart';
+import 'package:dinero/core/di/dependency_injection.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_bloc.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/widgets/cryptocurrency_list_header.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/widgets/global_market_summary.dart';
 import 'package:dinero/features/dashboard/widgets/dashboard_tab_bar.dart';
@@ -22,12 +25,39 @@ class _DashboardBodyState extends State<DashboardBody>
     with TickerProviderStateMixin {
   late final TabController _tabController;
 
+  // Allows you to access the InnerController.
+  late final GlobalKey<NestedScrollViewState> _globalKey;
+
   @override
   void initState() {
     super.initState();
     _tabController = TabController(
       length: _length,
       vsync: this,
+    );
+
+    _globalKey = GlobalKey();
+
+    // A method that allows specific code to be executed
+    // after the rendering phase is completed.
+    WidgetsBinding.instance.endOfFrame.then(
+      (endOfFrameValue) {
+        final innerController = _globalKey.currentState?.innerController;
+
+        innerController?.addListener(
+          () {
+            if (!innerController.hasClients) return;
+
+            final maxScrollExtent = innerController.position.maxScrollExtent;
+            final currentScrollOffset = innerController.offset;
+
+            if (currentScrollOffset >= (maxScrollExtent * 0.95)) {
+              inject<CryptocurrenciesBloc>()
+                  .add(const CryptocurrenciesEvent.fetched());
+            }
+          },
+        );
+      },
     );
   }
 
@@ -41,6 +71,7 @@ class _DashboardBodyState extends State<DashboardBody>
   Widget build(BuildContext context) {
     return SafeArea(
       child: NestedScrollView(
+        key: _nestedScrollViewGlobalKey,
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
             SliverToBoxAdapter(
