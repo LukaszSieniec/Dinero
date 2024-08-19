@@ -25,6 +25,8 @@ class CryptocurrenciesBloc
     FetchedCryptocurrenciesEvent event,
     Emitter<CryptocurrenciesState> emit,
   ) async {
+    if (state.reachedMax) return;
+
     final result = await _cryptocurrenciesRepository.fetchCryptocurrencies(
       vsCurrency: 'usd',
       perPage: _cryptocurrenciesPerPage,

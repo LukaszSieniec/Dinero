@@ -51,9 +51,7 @@ class _CryptocurrencyListState extends State<CryptocurrencyList> {
   }
 
   void _onScrollListener() {
-    if (!_scrollController.hasClients) {
-      return;
-    }
+    if (!_scrollController.hasClients) return;
 
     final maxScrollExtent = _scrollController.position.maxScrollExtent;
     final currentScrollOffset = _scrollController.offset;
