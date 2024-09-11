@@ -1,4 +1,6 @@
 import 'package:dinero/core/di/dependency_injection.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_bloc.dart';
+import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/dashboard/dashboard_body.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_bloc.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_event.dart';
@@ -15,6 +17,10 @@ class DashboardPage extends StatelessWidget {
         BlocProvider(
           create: (context) => inject<GlobalMarketBloc>()
             ..add(const GlobalMarketEvent.fetched()),
+        ),
+        BlocProvider(
+          create: (context) => inject<CryptocurrenciesBloc>()
+            ..add(const CryptocurrenciesEvent.fetched()),
         ),
       ],
       child: const DashboardBody(),
