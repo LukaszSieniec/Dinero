@@ -1,6 +1,5 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_header.dart';
-import 'package:dinero/core/di/dependency_injection.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_bloc.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/widgets/cryptocurrency_list_header.dart';
@@ -10,6 +9,7 @@ import 'package:dinero/features/dashboard/widgets/dashboard_tab_bar_view.dart';
 import 'package:dinero/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const int _length = 4;
@@ -52,7 +52,8 @@ class _DashboardBodyState extends State<DashboardBody>
             final currentScrollOffset = innerController.offset;
 
             if (currentScrollOffset >= (maxScrollExtent * 0.95)) {
-              inject<CryptocurrenciesBloc>()
+              context
+                  .read<CryptocurrenciesBloc>()
                   .add(const CryptocurrenciesEvent.fetched());
             }
           },
