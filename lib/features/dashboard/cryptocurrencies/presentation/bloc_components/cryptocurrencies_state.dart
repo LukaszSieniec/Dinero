@@ -7,7 +7,7 @@ part 'cryptocurrencies_state.freezed.dart';
 class CryptocurrenciesState with _$CryptocurrenciesState {
   const factory CryptocurrenciesState({
     @Default([]) final List<Cryptocurrency> cryptocurrencies,
-    @Default(0) final int pageIndex,
+    @Default(1) final int pageIndex,
     @Default(false) final bool reachedMax,
     @Default(CryptocurrenciesStatus.loading())
     final CryptocurrenciesStatus status,
