@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 class CryptocurrenciesBloc
     extends Bloc<CryptocurrenciesEvent, CryptocurrenciesState> {
   static const Duration _throttleDuration = Duration(milliseconds: 100);
-  static const int _cryptocurrenciesPerPage = 100;
+  static const int _cryptocurrenciesPerPage = 15;
 
   final CryptocurrenciesRepository _cryptocurrenciesRepository;
 
@@ -37,7 +37,10 @@ class CryptocurrenciesBloc
     emit(
       result.when(
         success: (cryptocurrencies) => state.copyWith(
-          cryptocurrencies: cryptocurrencies ?? [],
+          cryptocurrencies: [
+            ...state.cryptocurrencies,
+            ...cryptocurrencies ?? [],
+          ],
           pageIndex: state.pageIndex + 1,
           status: const CryptocurrenciesStatus.success(),
         ),
