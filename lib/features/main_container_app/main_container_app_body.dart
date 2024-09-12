@@ -79,7 +79,8 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
               onPressed: () => nestedScrollViewGlobalKey
                   .currentState?.innerController
                   .animateTo(
-                -40.0.h,
+                // TODO: We need to verify this in the future.
+                -1.0,
                 duration: Durations.long1,
                 curve: Curves.ease,
               ),
