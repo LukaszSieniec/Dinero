@@ -51,6 +51,12 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
   }
 
   @override
+  void dispose() {
+    nestedScrollViewGlobalKey.currentState?.innerController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
