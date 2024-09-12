@@ -1,3 +1,4 @@
+import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_bloc.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/main_container_app/widgets/bottom_nav_bar.dart';
@@ -21,9 +22,13 @@ class MainContainerAppBody extends StatefulWidget {
 }
 
 class _MainContainerAppBodyState extends State<MainContainerAppBody> {
+  late bool isVisibleButton;
+
   @override
   void initState() {
     super.initState();
+    // Initially, the FloatingActionButton is not visible.
+    isVisibleButton = false;
 
     // A method that allows specific code to be executed
     // after the rendering phase is completed.
@@ -38,6 +43,11 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
 
             final maxScrollExtent = innerController.position.maxScrollExtent;
             final currentScrollOffset = innerController.offset;
+
+            setState(
+              () => isVisibleButton =
+                  currentScrollOffset > (maxScrollExtent * 0.10),
+            );
 
             if (currentScrollOffset >= (maxScrollExtent * 0.95)) {
               context
@@ -59,9 +69,21 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-      ),
+      floatingActionButton: isVisibleButton
+          ? FloatingActionButton(
+              child: const Icon(
+                Icons.keyboard_arrow_up_outlined,
+                color: AppPalette.white,
+              ),
+              onPressed: () => nestedScrollViewGlobalKey
+                  .currentState?.innerController
+                  .animateTo(
+                -1.0,
+                duration: Durations.long1,
+                curve: Curves.ease,
+              ),
+            )
+          : null,
       body: widget.navigationShell,
       bottomNavigationBar:
           BottomNavBar(navigationShell: widget.navigationShell),
