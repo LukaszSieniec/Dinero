@@ -4,6 +4,7 @@ import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_com
 import 'package:dinero/features/main_container_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 // Allows you to access the InnerController.
@@ -78,7 +79,7 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
               onPressed: () => nestedScrollViewGlobalKey
                   .currentState?.innerController
                   .animateTo(
-                -1.0,
+                -40.0.h,
                 duration: Durations.long1,
                 curve: Curves.ease,
               ),
