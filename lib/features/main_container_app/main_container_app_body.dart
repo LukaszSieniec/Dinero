@@ -44,10 +44,10 @@ class _MainContainerAppBodyState extends State<MainContainerAppBody> {
             final maxScrollExtent = innerController.position.maxScrollExtent;
             final currentScrollOffset = innerController.offset;
 
-            isVisibleButton.value =
-                currentScrollOffset > (maxScrollExtent * 0.10);
+            isVisibleButton.value = currentScrollOffset >
+                (MediaQuery.of(context).size.height * 0.10);
 
-            if (currentScrollOffset >= (maxScrollExtent * 0.95)) {
+            if (currentScrollOffset > (maxScrollExtent * 0.90)) {
               context
                   .read<CryptocurrenciesBloc>()
                   .add(const CryptocurrenciesEvent.fetched());
