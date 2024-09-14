@@ -1,3 +1,3 @@
-abstract class AppResources {
+class AppResources {
   static const String appFamilyFont = 'Urbanist';
 }

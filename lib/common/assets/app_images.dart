@@ -1,6 +1,6 @@
 const String _assetsPath = 'assets/images/';
 
-abstract class AppImages {
+class AppImages {
   static final splash = _Splash();
   static final dashboard = _Dashboard();
   static final wallet = _Wallet();

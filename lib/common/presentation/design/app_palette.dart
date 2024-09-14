@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // The color palette used in the final theme.
-abstract class AppPalette {
+class AppPalette {
   // Label colors in the application.
   static const Color textWhite = Color(0xFFFFFFFF);
   static const Color textGray = Color(0xFF646875);

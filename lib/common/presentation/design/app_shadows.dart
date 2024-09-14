@@ -1,7 +1,7 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:flutter/material.dart';
 
-abstract class AppShadows {
+class AppShadows {
   static const BoxShadow bottomNavBarShadow = BoxShadow(
     color: AppPalette.white,
     offset: Offset(

@@ -1,4 +1,4 @@
-abstract class AppInternalization {
+class AppInternalization {
   static const String path = 'assets/translations';
 
   static const String languageCodePolish = 'pl';
