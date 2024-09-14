@@ -3,6 +3,9 @@ import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocu
 import 'package:dio/dio.dart';
 
 abstract class CryptocurrenciesRepository {
+  /// The getter that allows you to observe the list of cryptocurrencies.
+  Stream<List<Cryptocurrency>> get observeCryptocurrencies;
+
   /// The method allows you to fetch all cryptocurrencies.
   Future<Result<List<Cryptocurrency>, DioException>> fetchCryptocurrencies({
     required String vsCurrency,

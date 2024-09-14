@@ -5,15 +5,22 @@ import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryp
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/repository/cryptocurrencies_repository.dart';
 import 'package:dio/dio.dart';
+import 'package:rxdart/rxdart.dart';
 
 class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
   final CryptocurrenciesApi _cryptocurrenciesApi;
   final CryptocurrenciesAutoMapper _autoMapper;
 
-  const RestApiCryptocurrenciesRepository(
+  final BehaviorSubject<List<Cryptocurrency>> _cryptocurrenciesController;
+
+  RestApiCryptocurrenciesRepository(
     this._cryptocurrenciesApi,
     this._autoMapper,
-  );
+  ) : _cryptocurrenciesController = BehaviorSubject();
+
+  @override
+  Stream<List<Cryptocurrency>> get observeCryptocurrencies =>
+      _cryptocurrenciesController.stream;
 
   @override
   Future<Result<List<Cryptocurrency>, DioException>> fetchCryptocurrencies({
@@ -47,6 +54,13 @@ class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
           (cryptocurrency) => _autoMapper
               .convert<CryptocurrencyResponse, Cryptocurrency>(cryptocurrency),
         ),
+      );
+
+      _cryptocurrenciesController.add(
+        [
+          ..._cryptocurrenciesController.value,
+          ...cryptocurrencies,
+        ],
       );
 
       return Result.success(data: cryptocurrencies);

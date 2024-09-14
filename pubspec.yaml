@@ -91,6 +91,9 @@ dependencies:
   # for creating beautiful, animated and high-performance charts.
   syncfusion_flutter_charts: ^26.2.8
 
+  # RxDart extends the capabilities of Dart Streams and StreamControllers.
+  rxdart: ^0.28.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
