@@ -58,7 +58,8 @@ class RestApiCryptocurrenciesRepository implements CryptocurrenciesRepository {
 
       _cryptocurrenciesController.add(
         [
-          ..._cryptocurrenciesController.value,
+          if (_cryptocurrenciesController.hasValue)
+            ..._cryptocurrenciesController.value,
           ...cryptocurrencies,
         ],
       );
