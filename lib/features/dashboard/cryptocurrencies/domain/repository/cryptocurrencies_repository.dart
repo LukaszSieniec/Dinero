@@ -1,4 +1,4 @@
-import 'package:dinero/common/utils/result.dart';
+import 'package:dinero/core/utils/result.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
 import 'package:dio/dio.dart';
 

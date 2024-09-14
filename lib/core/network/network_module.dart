@@ -1,4 +1,4 @@
-import 'package:dinero/common/utils/app_environment.dart';
+import 'package:dinero/core/utils/app_environment.dart';
 import 'package:dinero/core/di/dependency_injection.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';

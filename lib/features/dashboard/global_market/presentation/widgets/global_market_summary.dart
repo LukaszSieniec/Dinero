@@ -1,6 +1,6 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
-import 'package:dinero/common/utils/number_formatters/app_number_formatters.dart';
+import 'package:dinero/core/utils/number_formatters/app_number_formatters.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_bloc.dart';
 import 'package:dinero/features/dashboard/global_market/presentation/bloc_components/global_market_state.dart';
 import 'package:dinero/generated/locale_keys.g.dart';

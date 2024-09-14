@@ -1,4 +1,4 @@
-import 'package:dinero/common/utils/result.dart';
+import 'package:dinero/core/utils/result.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/data/mapper/cryptocurrencies_auto_mapper.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/data/network/cryptocurrencies_api.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/data/network/dto/cryptocurrency_response.dart';

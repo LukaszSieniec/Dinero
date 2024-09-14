@@ -1,7 +1,7 @@
 import 'package:dinero/common/assets/app_internalization.dart';
 import 'package:dinero/common/presentation/design/themes/app_theme.dart';
-import 'package:dinero/common/utils/bloc/app_bloc_observer.dart';
-import 'package:dinero/common/utils/app_environment.dart';
+import 'package:dinero/core/utils/bloc/app_bloc_observer.dart';
+import 'package:dinero/core/utils/app_environment.dart';
 import 'package:dinero/core/di/dependency_injection.dart';
 import 'package:dinero/core/persistence/secure_storage.dart';
 import 'package:easy_localization/easy_localization.dart';

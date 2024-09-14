@@ -1,4 +1,4 @@
-import 'package:dinero/common/utils/result.dart';
+import 'package:dinero/core/utils/result.dart';
 import 'package:dinero/features/dashboard/global_market/data/mapper/global_market_auto_mapper.dart';
 import 'package:dinero/features/dashboard/global_market/data/network/dto/global_market_content_response.dart';
 import 'package:dinero/features/dashboard/global_market/data/network/global_market_api.dart';

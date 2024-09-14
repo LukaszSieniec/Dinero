@@ -1,5 +1,5 @@
-import 'package:dinero/common/utils/app_environment.dart';
 import 'package:dinero/core/di/dependency_injection.config.dart';
+import 'package:dinero/core/utils/app_environment.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 

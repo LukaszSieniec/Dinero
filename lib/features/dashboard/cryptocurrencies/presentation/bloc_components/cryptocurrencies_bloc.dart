@@ -1,4 +1,4 @@
-import 'package:dinero/common/utils/bloc/app_event_transformers.dart';
+import 'package:dinero/core/utils/bloc/app_event_transformers.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/repository/cryptocurrencies_repository.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_event.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/presentation/bloc_components/cryptocurrencies_state.dart';

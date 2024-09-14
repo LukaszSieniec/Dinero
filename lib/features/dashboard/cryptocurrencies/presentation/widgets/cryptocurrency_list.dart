@@ -1,7 +1,7 @@
 import 'package:dinero/common/presentation/design/app_palette.dart';
 import 'package:dinero/common/presentation/widgets/app_label.dart';
 import 'package:dinero/common/presentation/widgets/app_rounded_network_image.dart';
-import 'package:dinero/common/utils/number_formatters/app_number_formatters.dart';
+import 'package:dinero/core/utils/number_formatters/app_number_formatters.dart';
 import 'package:dinero/features/dashboard/cryptocurrencies/domain/model/cryptocurrency.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
