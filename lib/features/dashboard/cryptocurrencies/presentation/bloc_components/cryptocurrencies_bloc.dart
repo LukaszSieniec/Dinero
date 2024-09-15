@@ -19,7 +19,18 @@ class CryptocurrenciesBloc
       _onFetched,
       transformer: throttleDroppable(_throttleDuration),
     );
+    on<ObservedCryptocurrenciesEvent>(_onObserved);
   }
+
+  Future<void> _onObserved(
+    ObservedCryptocurrenciesEvent event,
+    Emitter<CryptocurrenciesState> emit,
+  ) async =>
+      await emit.forEach(
+        _cryptocurrenciesRepository.observeCryptocurrencies,
+        onData: (cryptocurrencies) =>
+            state.copyWith(cryptocurrencies: cryptocurrencies),
+      );
 
   Future<void> _onFetched(
     FetchedCryptocurrenciesEvent event,
@@ -37,10 +48,6 @@ class CryptocurrenciesBloc
     emit(
       result.when(
         success: (cryptocurrencies) => state.copyWith(
-          cryptocurrencies: [
-            ...state.cryptocurrencies,
-            ...cryptocurrencies ?? [],
-          ],
           pageIndex: state.pageIndex + 1,
           status: const CryptocurrenciesStatus.success(),
         ),

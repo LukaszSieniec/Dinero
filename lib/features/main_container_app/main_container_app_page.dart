@@ -26,6 +26,7 @@ class MainContainerAppPage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => inject<CryptocurrenciesBloc>()
+            ..add(const CryptocurrenciesEvent.observed())
             ..add(const CryptocurrenciesEvent.fetched()),
         ),
       ],
