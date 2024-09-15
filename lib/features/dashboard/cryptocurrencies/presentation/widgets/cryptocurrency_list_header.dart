@@ -21,22 +21,31 @@ class CryptocurrencyListHeader extends StatelessWidget {
           Expanded(
             child: CryptocurrencyHeaderItem(
               label: LocaleKeys.dashboard_capitalization.tr(),
-              onTap: () {},
+              isSelected: true,
+              onTap: () {
+                // Call event.
+              },
             ),
           ),
           Expanded(
             child: CryptocurrencyHeaderItem(
               label: LocaleKeys.dashboard_price.tr(),
-              textAlign: TextAlign.end,
-              onTap: () {},
+              isSelected: true,
+              mainAxisAlignment: MainAxisAlignment.end,
+              onTap: () {
+                // Call event.
+              },
             ),
           ),
           SizedBox(width: 32.0.w),
           Expanded(
             child: CryptocurrencyHeaderItem(
               label: LocaleKeys.dashboard_last7Days.tr(),
-              textAlign: TextAlign.end,
-              onTap: () {},
+              isSelected: true,
+              mainAxisAlignment: MainAxisAlignment.end,
+              onTap: () {
+                // Call event.
+              },
             ),
           ),
         ],
@@ -48,19 +57,18 @@ class CryptocurrencyListHeader extends StatelessWidget {
 class CryptocurrencyHeaderItem extends StatelessWidget {
   final String label;
 
-  // The cryptocurrency parameter label position.
-  final TextAlign? textAlign;
+  final bool isSelected;
+
+  final MainAxisAlignment mainAxisAlignment;
 
   // Allows you to sort cryptocurrencies according to the selected parameter.
   final VoidCallback? onTap;
 
-  final bool isSelected;
-
   const CryptocurrencyHeaderItem({
     required this.label,
-    this.textAlign,
-    this.onTap,
     this.isSelected = false,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.onTap,
     super.key,
   });
 
@@ -68,13 +76,22 @@ class CryptocurrencyHeaderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: AppLabel(
-        label: label,
-        style: Theme.of(context)
-            .textTheme
-            .labelSmall!
-            .copyWith(color: AppPalette.textMediumGray),
-        textAlign: textAlign,
+      child: Row(
+        mainAxisAlignment: mainAxisAlignment,
+        children: [
+          AppLabel(
+            label: label,
+            style: Theme.of(context)
+                .textTheme
+                .labelSmall!
+                .copyWith(color: AppPalette.textMediumGray),
+          ),
+          if (isSelected)
+            const Icon(
+              size: 16.0,
+              Icons.arrow_drop_up_outlined,
+            ),
+        ],
       ),
     );
   }
